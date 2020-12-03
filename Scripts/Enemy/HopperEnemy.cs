@@ -26,7 +26,7 @@ public class HopperEnemy : MonoBehaviour
         {
             _movement.Move();
         }
-
+        //_anim._animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") - you could make a method in EnemyAnimator to return just true or false and exposing the whole animator to everyone
         if (!_movement.InsideOfLimits() && !inRange && !_anim._animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
             _movement.SelectTarget();
