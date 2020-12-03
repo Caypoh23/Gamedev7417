@@ -11,6 +11,9 @@ public class PlayerAnimation : MonoBehaviour
     {
         _animator.SetFloat("Move", Mathf.Abs(move));
     }
+    //method not readable
+    //bad idea to have it like jump true false
+    //better to split to separate functions like Jump and Land
     public void Jump(bool jump)
     {
         _animator.SetBool("Jump", jump);
