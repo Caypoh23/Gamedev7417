@@ -16,7 +16,7 @@ namespace Enemy
         private bool _isCooling; //Check if Enemy is cooling after attack
         [HideInInspector] public float _intTimer;
         
-        
+        //naming is unclear and not clear why public
         public void EnemyLogic()
         {
             _distance = Vector2.Distance(transform.position, _movement.Target.position);
@@ -56,7 +56,8 @@ namespace Enemy
                 _timer = _intTimer;
             }
         }
-    
+        //why not to use states??? you can use enum to define current state
+        //using many bool is not the best practice
         public void StopAttack()
         {
             _isCooling = false;
