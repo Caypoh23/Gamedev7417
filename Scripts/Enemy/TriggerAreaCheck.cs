@@ -9,6 +9,8 @@ namespace Enemy
     {
         [SerializeField] private HopperEnemy _hopperEnemy;
         [SerializeField] private EnemyMovement _movement;
+        
+        //looks similar to hot zone check - can try to avoid code repetition
             private void OnTriggerEnter2D(Collider2D collider)
         {
             if (collider.gameObject.CompareTag("Player"))
