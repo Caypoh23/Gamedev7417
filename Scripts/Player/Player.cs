@@ -6,6 +6,8 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+//too many resposibilities on a single script: movement,attack
+//ideally, you should separate user input from movement and animation and link them via events
 public class Player : MonoBehaviour, IFlippable
 {
     #region Properties
@@ -48,13 +50,17 @@ public class Player : MonoBehaviour, IFlippable
 
     private void Move()
     {
+        //why to store in local variable?
         _playerHorizontalMove = Input.GetAxisRaw("Horizontal");
         
         _isGrounded = IsGrounded();
 
         if (_playerHorizontalMove > 0)
         {
+            
             Flip();
+            //are you sure that you should change this value after call of the function where it is used?
+            //why not to pass it as argument?
             _faceRight = true;
         }
         else if (_playerHorizontalMove < 0)
